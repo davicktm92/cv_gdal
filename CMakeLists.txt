@@ -17,24 +17,24 @@ find_package(GDAL REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${GDAL_INCLUDE_DIRS})
 
-add_executable(opencv_gdal src/opencv_gdal.cpp)
+#add_executable(opencv_gdal src/opencv_gdal.cpp)
 
-target_include_directories(opencv_gdal PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-target_compile_features(opencv_gdal PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
-ament_target_dependencies(
-  opencv_gdal
-  rclcpp
-  std_msgs
-)
+# target_include_directories(opencv_gdal PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
+# target_compile_features(opencv_gdal PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+# ament_target_dependencies(
+#   opencv_gdal
+#   rclcpp
+#   std_msgs
+# )
 
-target_link_libraries(opencv_gdal 
-${GDAL_LIBRARIES}
-${OpenCV_LIBRARIES})
+# target_link_libraries(opencv_gdal 
+# ${GDAL_LIBRARIES}
+# ${OpenCV_LIBRARIES})
 
-install(TARGETS opencv_gdal
-  DESTINATION lib/${PROJECT_NAME})
+# install(TARGETS opencv_gdal
+#   DESTINATION lib/${PROJECT_NAME})
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -63,7 +63,7 @@ install(PROGRAMS
 
 install(
   DIRECTORY
-    launch maps models params worlds resources
+    launch maps params worlds resources results
   DESTINATION
     share/${PROJECT_NAME}
 )
