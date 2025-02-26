@@ -1,0 +1,9 @@
+image: map1.pgm
+resolution: 0.3288574793875147
+origin: [-1696.904593639576,-159.49587750294464,0.00]
+destiny: [-2167.170789163722,-147.98586572438163,0.00]
+map_size: [2543.7126030624263,1396.0,0.00]
+zone_name: canarias
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
